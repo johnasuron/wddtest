@@ -1,0 +1,280 @@
+/* General Styles */
+body {
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode header {
+    background-color: #0d2a42;
+}
+
+body.dark-mode nav {
+    background-color: #4a2c1a;
+}
+
+body.dark-mode .form-container,
+body.dark-mode .benefits-section {
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .form-container h2,
+body.dark-mode .benefits-section h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode footer {
+    background-color: #0d2a42;
+}
+
+/* Header Styles */
+header {
+    background-color: #1B4F72;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 4px solid white;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+}
+
+/* Course Title Styles */
+header h1 .course-title {
+    font-size: 0.6em;
+    display: block;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+}
+
+/* Hamburger Menu Styles */
+#menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Navigation Menu Styles */
+nav {
+    background-color: #7C431E;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 25px;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    #menuToggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #7C431E;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 1em;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+main h2 {
+    margin-bottom: 20px;
+    color: #1B4F72;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* Form Container */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Form Styles */
+form label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #1B4F72;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0d2a42;
+}
+
+/* Benefits Section */
+.benefits-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.benefits-section h3 {
+    margin-top: 0;
+    color: #1B4F72;
+}
+
+.benefits-section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .form-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .benefits-section {
+        margin-top: 0;
+    }
+}
+
+/* Google Map Container */
+.map-container {
+    width: 100%;
+    max-width: 960px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1B4F72;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 1em;
+}
+
+footer img {
+    width: 30px;
+    height: 20px;
+}

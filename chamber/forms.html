@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Application</title>
+    <meta name="description" content="Apply for the WDD 230 - Web Frontend Development course.">
+    <meta name="author" content="John Lobuin Asuron">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Course Application">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://johnlobuin.github.io/wdd230/lodwar.jpg">
+    <meta property="og:url" content="https://johnlobuin.github.io/wdd230/index.html">
+    <meta property="og:description" content="Apply for the WDD 230 - Web Frontend Development course.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Normalization -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styleform.css">
+    <link rel="stylesheet" href="forms.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="pictures/john.jpg" alt="John Lobuin Asuron Profile">
+            <h1>John Lobuin Asuron<br><span class="course-title">Course Application</span></h1>
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </div>
+        <button id="menuToggle" aria-label="Toggle Menu">&#9776;</button>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="chamber.html">Chamber</a></li>
+                <li><a href="/chamber-site-plan.html" target="_blank">Site Plan</a></li>
+                <li><a href="#">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="userForm" method="get" action="record.html">
+            <fieldset>
+                <legend>User Information</legend>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="8" pattern="[a-zA-Z0-9]+">
+                    <small>Password must be at least 8 characters long and alphanumeric.</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <small id="passwordError" class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@byui\.edu$"
+                        title="Please enter a valid BYU-Idaho email address (e.g., user@byui.edu)">
+                </div>
+                <div class="form-group">
+                    <label for="rating">Page Rating (1-10):</label>
+                    <input type="range" id="rating" name="rating" min="1" max="10" step="1" value="5">
+                    <span id="ratingValue">5</span>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Apply Now</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p><span id="copyrightYear"></span> 🌸 John Lobuin Asuron 🌸 Kenya</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+        <img src="pictures/kenya.png" alt="Kenya Flag">
+    </footer>
+    <script src="scripts/getDates.js"></script>
+    <script src="form.js"></script>
+</body>
+
+</html>

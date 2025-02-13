@@ -1,0 +1,83 @@
+:root {
+    --bord: 1px solid #777;
+    /* CSS variable for border */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+main {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 760px;
+    background-color: #eee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.datatable {
+    width: 200px;
+    margin-top: 2rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    align-items: center;
+    text-align: center;
+}
+
+.col {
+    border-top: var(--bord);
+    border-left: var(--bord);
+    padding: 10px;
+    background-color: #fff;
+}
+
+.col:nth-child(even) {
+    border-right: var(--bord);
+}
+
+.row:last-child {
+    border-bottom: var(--bord);
+}
+
+.row:last-child .col {
+    background-color: #bbb;
+    /* Darker gray background for the last row */
+}
+
+/* Anchor tag pseudo-classes */
+a:link,
+a:visited {
+    color: navy;
+    /* Navy color for unvisited and visited links */
+    text-decoration: none;
+}
+
+a:active {
+    color: navy;
+    /* Navy color for active links */
+}
+
+a:hover {
+    color: purple;
+    /* Purple color on hover */
+}

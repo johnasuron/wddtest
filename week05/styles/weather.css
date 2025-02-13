@@ -1,0 +1,49 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#current-temp {
+    font-size: 2em;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+#weather-icon {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+}
+
+figcaption {
+    font-size: 1.2em;
+    color: #555;
+    text-transform: capitalize;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}

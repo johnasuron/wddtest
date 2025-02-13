@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover</title> <!-- Updated title -->
+    <meta name="description"
+        content="WDD 230 - Web Frontend Development course assignment portal by John Lobuin Asuron">
+    <meta name="author" content="John Lobuin Asuron">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="WDD 230 - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://johnlobuin.github.io/wdd230/lodwar.jpg">
+    <meta property="og:url" content="https://johnlobuin.github.io/wdd230/index.html">
+    <meta property="og:description"
+        content="WDD 230 - Web Frontend Development course assignment portal by John Lobuin Asuron">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- CSS Normalization -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="discover.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="pictures/john.jpg" alt="John Lobuin Asuron Profile">
+            <h1>John Lobuin Asuron<br><span class="course-title">WDD 230 - Web Frontend Development</span></h1>
+            <!-- Dark Mode Toggle Button -->
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <button id="menuToggle" aria-label="Toggle Menu">&#9776;</button>
+        <!-- Navigation Menu -->
+        <nav id="navMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="chamber.html">Chamber</a></li>
+                <li><a href="/chamber-site-plan.html" target="_blank">Site Plan</a></li>
+                <li><a href="forms.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <div id="visitMessage"></div>
+            <h3>Local Events</h3>
+            <ul>
+                <li>Business Fair Lodwar: January 1, 2024</li>
+                <li>Business Fair Lokichar: February 14, 2024</li>
+                <li>Business Fair Kakuma: March 21, 2024</li>
+            </ul>
+        </div>
+        <div class="gallery">
+            <figure>
+                <img data-src="pictures/image1.webp" alt="Local Photo 1" class="lazy">
+                <figcaption>Turkana Business fair</figcaption>
+            </figure>
+            <figure>
+                <img data-src="pictures/image2.webp" alt="Local Photo 2" class="lazy">
+                <figcaption>Kakuma Business Fair</figcaption>
+            </figure>
+            <figure>
+                <img data-src="pictures/image3.webp" alt="Local Photo 3" class="lazy">
+                <figcaption>Lokichar Business fair</figcaption>
+            </figure>
+            <figure>
+                <img data-src="pictures/image4.webp" alt="Local Photo 4" class="lazy">
+                <figcaption>Kainuk Business fair</figcaption>
+            </figure>
+            <figure>
+                <img data-src="pictures/image5.webp" alt="Local Photo 5" class="lazy">
+                <figcaption>Lokichogio Fair</figcaption>
+            </figure>
+            <figure>
+                <img data-src="pictures/image6.webp" alt="Local Photo 6" class="lazy">
+                <figcaption>Lodwar Fair</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+        <p><span id="copyrightYear"></span> 🌸 John Lobuin Asuron 🌸 Kenya</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+        <img src="pictures/kenya.png" alt="Kenya Flag">
+    </footer>
+
+    <script src="joingetDates.js"></script>
+    <script>
+        // JavaScript for Hamburger Menu and Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu').querySelector('ul');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+
+            // Hamburger Menu Toggle
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Dark Mode Toggle
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+            });
+
+            // Lazy Loading Images
+            const lazyImages = document.querySelectorAll('.lazy');
+            const lazyLoad = (target) => {
+                const io = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                            observer.disconnect();
+                        }
+                    });
+                });
+                io.observe(target);
+            };
+            lazyImages.forEach(lazyLoad);
+
+            // Local Storage for Visit Message
+            const visitMessage = document.getElementById('visitMessage');
+            const lastVisit = localStorage.getItem('lastVisit');
+            const currentVisit = Date.now();
+            const oneDay = 24 * 60 * 60 * 1000;
+
+            if (!lastVisit) {
+                visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+            } else {
+                const daysSinceLastVisit = Math.floor((currentVisit - lastVisit) / oneDay);
+                if (daysSinceLastVisit < 1) {
+                    visitMessage.textContent = "Back so soon! Awesome!";
+                } else {
+                    visitMessage.textContent = `You last visited ${daysSinceLastVisit} ${daysSinceLastVisit === 1 ? 'day' : 'days'} ago.`;
+                }
+            }
+
+            localStorage.setItem('lastVisit', currentVisit);
+        });
+    </script>
+</body>
+
+</html>

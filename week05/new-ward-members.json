@@ -1,0 +1,73 @@
+{
+    "families": [
+        {
+            "familyName": "Smith",
+            "moveInDate": "2023-09-15",
+            "numberOfMembers": 4,
+            "visitedByBishopric": false,
+            "members": [
+                {
+                    "name": "John Smith",
+                    "gender": "Male",
+                    "birthdate": "1980-05-12"
+                },
+                {
+                    "name": "Jane Smith",
+                    "gender": "Female",
+                    "birthdate": "1982-08-25"
+                },
+                {
+                    "name": "Emily Smith",
+                    "gender": "Female",
+                    "birthdate": "2010-03-30"
+                },
+                {
+                    "name": "Michael Smith",
+                    "gender": "Male",
+                    "birthdate": "2012-11-14"
+                }
+            ]
+        },
+        {
+            "familyName": "Johnson",
+            "moveInDate": "2023-10-01",
+            "numberOfMembers": 3,
+            "visitedByBishopric": true,
+            "members": [
+                {
+                    "name": "Robert Johnson",
+                    "gender": "Male",
+                    "birthdate": "1975-12-10"
+                },
+                {
+                    "name": "Laura Johnson",
+                    "gender": "Female",
+                    "birthdate": "1978-07-22"
+                },
+                {
+                    "name": "Daniel Johnson",
+                    "gender": "Male",
+                    "birthdate": "2008-04-18"
+                }
+            ]
+        },
+        {
+            "familyName": "Brown",
+            "moveInDate": "2023-08-20",
+            "numberOfMembers": 2,
+            "visitedByBishopric": false,
+            "members": [
+                {
+                    "name": "David Brown",
+                    "gender": "Male",
+                    "birthdate": "1990-02-05"
+                },
+                {
+                    "name": "Sarah Brown",
+                    "gender": "Female",
+                    "birthdate": "1992-06-15"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 230 - Web Frontend Development</title>
+    <meta name="description"
+        content="WDD 230 - Web Frontend Development course assignment portal by John Lobuin Asuron">
+    <meta name="author" content="John Lobuin Asuron">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="WDD 230 - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://johnlobuin.github.io/wdd230/lodwar.jpg">
+    <meta property="og:url" content="https://johnlobuin.github.io/wdd230/index.html">
+    <meta property="og:description"
+        content="WDD 230 - Web Frontend Development course assignment portal by John Lobuin Asuron">
+
+    <!-- Favicon -->
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Normalization -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="join.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="pictures/john.jpg" alt="Profile">
+            <!-- Dark Mode Toggle Button -->
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <button id="menuToggle" aria-label="Toggle Menu">&#9776;</button>
+        <!-- Navigation Menu -->
+        <nav id="navMenu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="chamber.html">Chamber</a></li>
+                <li><a href="/chamber-site-plan.html" target="_blank">Site Plan</a></li>
+                <li><a href="forms.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Membership Application Form</h2>
+            <form action="../thankyou.html" method="get">
+                <!-- Applicant's First Name -->
+                <label for="firstName">First Name:
+                    <input type="text" id="firstName" name="firstName" required>
+                </label>
+
+                <!-- Applicant's Last Name -->
+                <label for="lastName">Last Name:
+                    <input type="text" id="lastName" name="lastName" required>
+                </label>
+
+                <!-- Applicant's Title/Position -->
+                <label for="title">Title/Position:
+                    <input type="text" id="title" name="title" pattern="[A-Za-z\s\-]{7,}" required>
+                </label>
+
+                <!-- Email Address -->
+                <label for="email">Email:
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </label>
+
+                <!-- Mobile Phone Number -->
+                <label for="phone">Mobile Phone:
+                    <input type="tel" id="phone" name="phone" required>
+                </label>
+
+                <!-- Business/Organization Name -->
+                <label for="orgName">Business/Organization Name:
+                    <input type="text" id="orgName" name="orgName" required>
+                </label>
+
+                <!-- Membership Level -->
+                <label for="membership">Membership Level:
+                    <select id="membership" name="membership" required>
+                        <option value="">Select a level</option>
+                        <option value="np">NP Membership (Non-Profit, No Fee)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+
+                <!-- Business/Organization Description -->
+                <label for="description">Business/Organization Description:
+                    <textarea id="description" name="description" rows="5"></textarea>
+                </label>
+
+                <!-- Hidden Timestamp -->
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <!-- Submit Button -->
+                <input type="submit" value="Submit Application">
+            </form>
+
+            <!-- Membership Benefits Section -->
+            <aside class="benefits-section">
+                <h3>Membership Benefits</h3>
+                <ul>
+                    <li><strong>NP Membership:</strong> Free for non-profits. Access to basic resources.</li>
+                    <li><strong>Bronze Membership:</strong> Event discounts, training sessions.</li>
+                    <li><strong>Silver Membership:</strong> Spotlight advertising, advanced training.</li>
+                    <li><strong>Gold Membership:</strong> Exclusive events, premium advertising, and more.</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p><span id="copyrightYear"></span> 🌸 Kenya</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+        <img src="pictures/kenya.png" alt="Kenya Flag">
+    </footer>
+
+    <script src="joingetDates.js"></script>
+    <script>
+        // JavaScript for Hamburger Menu and Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu').querySelector('ul');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+
+            // Hamburger Menu Toggle
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Dark Mode Toggle
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+            });
+
+            // Set Timestamp
+            const timestampField = document.getElementById('timestamp');
+            timestampField.value = new Date().toISOString();
+        });
+
+        // Page Visit Counter
+        document.addEventListener('DOMContentLoaded', function () {
+            let visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount = parseInt(visitCount) + 1;
+            localStorage.setItem('visitCount', visitCount);
+            document.getElementById('visitCount').textContent = visitCount;
+        });
+    </script>
+</body>
+
+</html>
