@@ -1,0 +1,45 @@
+{
+    "weeks": [
+        {
+            "week": "Week 1",
+            "links": [
+                { "url": "#", "title": "Layout" },
+                { "url": "#", "title": "Media Query" },
+                { "url": "#", "title": "JS Pen" }
+            ]
+        },
+        {
+            "week": "Week 2",
+            "links": [
+                { "url": "index/design.html", "title": "CodePen" },
+                { "url": "https://johnasuron.github.io/wdd230-week2/", "title": "Book of Mormon" }
+            ]
+        },
+        {
+            "week": "Week 3",
+            "links": [
+                { "url": "pictures/landscape.webp", "title": "WebP" },
+                { "url": "https://johnasuron.github.io/lazyload/", "title": "Lazy Load" },
+                { "url": "https://johnasuron.github.io/Responsive-Images/", "title": "Responsive Images" }
+            ]
+        },
+        {
+            "week": "Week 4",
+            "links": [
+                { "url": "pseudo.html", "title": "Pseudo-classes" },
+                { "url": "pictures/combinator exercises.jpg", "title": "Combinator Exercises" },
+                { "url": "table.html", "title": "Table Build" },
+                { "url": "course.html", "title": "Html Form" }
+            ]
+        },
+        {
+            "week": "Week 5",
+            "links": [
+                { "url": "Pseudo-element.html", "title": "Pseudo-element" },
+                { "url": "week05/new-ward-members.json", "title": "json File" },
+                { "url": "week05/prophets.html", "title": "The Fetch API" },
+                { "url": "week05/weather.html", "title": "Weather API" }
+            ]
+        }
+    ]
+}
