@@ -26,7 +26,7 @@
         {
             "week": "Week 4",
             "links": [
-                { "url": "pseudo-element.html", "title": "Pseudo-classes" },
+                { "url": "pseudo.html", "title": "Pseudo-classes" },
                 { "url": "pictures/combinator exercises.jpg", "title": "Combinator Exercises" },
                 { "url": "table.html", "title": "Table Build" },
                 { "url": "course.html", "title": "Html Form" }
@@ -35,7 +35,7 @@
         {
             "week": "Week 5",
             "links": [
-                { "url": "Pseudo.html", "title": "Pseudo-element" },
+                { "url": "Pseudo-element.html", "title": "Pseudo-element" },
                 { "url": "week05/new-ward-members.json", "title": "json File" },
                 { "url": "week05/prophets.html", "title": "The Fetch API" },
                 { "url": "week05/weather.html", "title": "Weather API" }
