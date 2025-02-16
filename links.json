@@ -35,7 +35,7 @@
         {
             "week": "Week 5",
             "links": [
-                { "url": "Pseudo-element.html", "title": "Pseudo-element" },
+                { "url": "Pseudo.html", "title": "Pseudo-element" },
                 { "url": "week05/new-ward-members.json", "title": "json File" },
                 { "url": "week05/prophets.html", "title": "The Fetch API" },
                 { "url": "week05/weather.html", "title": "Weather API" }
