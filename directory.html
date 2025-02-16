@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of Commerce - Membership Directory</title>
+    <meta name="description" content="Chamber of Commerce Membership Directory">
+    <meta name="author" content="John Lobuin Asuron">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Chamber of Commerce - Membership Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="URL_TO_YOUR_CHAMBER_IMAGE">
+    <meta property="og:url" content="URL_TO_YOUR_CHAMBER_PAGE">
+    <meta property="og:description" content="Chamber of Commerce Membership Directory">
+
+    <!-- Favicon -->
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Normalization -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="directory.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Added/Modified CSS Rules */
+
+        /* General Styles */
+        body {
+            font-family: 'Roboto Slab', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            /* Light gray background for overall page */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Ensure the body takes up at least the full viewport height */
+        }
+
+        header {
+            background-color: #1B4F72;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 4px solid white;
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 0;
+        }
+
+        nav {
+            background-color: #7C431E;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 25px;
+            display: block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #1B4F72;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 1em;
+            margin-top: auto;
+            /* Push the footer to the bottom */
+        }
+
+        /* Mobile Responsive adjustments */
+        @media (max-width: 600px) {
+            #member-list-container {
+                grid-template-columns: 1fr;
+                /* Stack cards on smaller screens */
+            }
+
+            .member-list-item {
+                padding: 10px;
+            }
+        }
+
+        /* Additional styles from the provided CSS */
+        main {
+            margin: 20px auto;
+            /* Added margin top and bottom, centered horizontally */
+            padding: 1rem;
+            max-width: 800px;
+            /* Wider main area */
+            background-color: #fff;
+            font-family: Roboto, Helvetica, sans-serif;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* subtle shadow for the main container */
+            border-radius: 8px;
+            /* Rounded corners for a softer look */
+        }
+
+        .menu {
+            margin: 1rem auto;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0.5rem;
+            background-color: #bed;
+            text-align: center;
+        }
+
+        .menu button {
+            padding: 1rem;
+            font-weight: 700;
+            border: none;
+            background-color: #5cb85c;
+            /* Green buttons */
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu button:hover {
+            background-color: #4cae4c;
+        }
+
+        section {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            /* increased padding */
+            background-color: #eee;
+            /* Lighter background color */
+            /* Add shadow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+            /* Make sections display horizontally */
+            /*display: inline-block; /* Or flex */
+            /*width: 300px;   /* Set a fixed card width */
+            margin: 10px;
+            /* increased margin */
+            border-radius: 8px;
+            /* Rounded corners for cards */
+            text-align: left;
+            /* Align text to the left for better readability */
+            width: calc(100% - 20px);
+            /* set width to 100% in list view */
+            box-sizing: border-box;
+            /* Include padding and border in the element's total width and height */
+            display: flex;
+            flex-direction: column;
+            /* stack elements vertically */
+        }
+
+        /* Add hover effect to section */
+        section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .grid {
+            display: flex;
+            /* Use flexbox for horizontal layout */
+            flex-wrap: wrap;
+            /* Allow wrapping to the next line */
+            /*overflow-x: auto;  /* Remove horizontal scrolling */
+            align-items: stretch;
+            /* Align items vertically in the center */
+            /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+            grid-gap: 5px;
+            padding: 20px;
+            /* Add padding around the container */
+            justify-content: center;
+            /* Center the cards horizontally */
+        }
+
+        .grid section {
+            text-align: left;
+            /* Reset text alignment, as it's now controlled by the container */
+        }
+
+        .grid img {
+            border: 1px solid #fff;
+            box-shadow: 0 0 10px #333;
+            max-width: 100%;
+            /* Make images responsive */
+            height: auto;
+            margin-bottom: 10px;
+            /* Space below the image */
+            border-radius: 5px;
+            /* slightly rounded corners for images */
+        }
+
+        .grid section>* {
+            margin: 0.5rem 0;
+            /* Spacing above and below each element */
+        }
+
+        .grid h3 {
+            font-family: "Caveat", cursive;
+            font-size: 1.8rem;
+            /* Slightly larger header */
+            color: #1B4F72;
+            /* Dark blue header */
+            margin-bottom: 5px;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            /* stack sections vertically */
+        }
+
+        .list section {
+            width: 100%;
+            /* take full width */
+            box-sizing: border-box;
+            /* Respect padding and border */
+            margin: 10px;
+            /* Spacing around cards */
+            padding: 1rem;
+            background-color: #eee;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .list section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .list section img {
+            display: none;
+            /* hide images in list view */
+        }
+
+        .list section h3 {
+            font-family: "Caveat", cursive;
+            font-size: 1.8rem;
+            color: #1B4F72;
+            margin-bottom: 5px;
+        }
+
+        .list section p,
+        .list section a {
+            margin: 0.5rem 0;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+        }
+
+        section p {
+            font-weight: 600;
+            font-size: smaller;
+            margin: 5px 0;
+            /* Spacing above and below paragraphs */
+        }
+
+        section a {
+            font-family: "Roboto", Arial, sans-serif;
+            font-size: 0.85rem;
+            color: navy;
+            letter-spacing: 1.1pt;
+            text-decoration: none;
+            /* Remove underlines from links */
+        }
+
+        section a:hover {
+            text-decoration: underline;
+            /* Add underline on hover */
+        }
+
+        img {
+            height: 75px;
+            max-width: 100%;
+            /* Images are jerks - Seattle*/
+        }
+
+        #member-container section {
+            /* Add padding to section */
+            padding: 10px;
+            display: inline-block;
+            /* Add display style */
+            width: 300px;
+            /* Add width */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <img src="pictures/john.jpg" alt="John Lobuin Asuron Profile">
+            <h1>DIRECTORY<br><span class="course-title">WDD 230 - Web Frontend Development</span></h1>
+            <!-- Dark Mode Toggle Button -->
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </div>
+        <!-- Hamburger Menu Button -->
+        <button id="menuToggle" aria-label="Toggle Menu">☰</button>
+        <!-- Navigation Menu -->
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/chamber/chamber.html">Chamber</a></li>
+                <li><a href="/chamber-site-plan.html" target="_blank">Site Plan</a></li>
+                <li><a href="forms.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="menu">
+            <button id="grid">⏹️Grid</button>
+            <button id="list">📄List</button>
+        </div>
+        <hr>
+        <article id="member-container" class="grid">
+            <!-- Member cards will be dynamically added here -->
+        </article>
+    </main>
+
+    <footer>
+        <p><span id="copyrightYear"></span> 🌸 John Lobuin Asuron 🌸 Kenya</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+        <img src="pictures/kenya.png" alt="Kenya Flag">
+    </footer>
+
+    <script src="joingetDates.js"></script>
+    <script>
+        // JavaScript for Hamburger Menu and Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu').querySelector('ul');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+
+            // Hamburger Menu Toggle
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Dark Mode Toggle
+            darkModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+            });
+        });
+
+        // Page Visit Counter
+        document.addEventListener('DOMContentLoaded', function () {
+            let visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount = parseInt(visitCount) + 1;
+            localStorage.setItem('visitCount', visitCount);
+            document.getElementById('visitCount').textContent = visitCount;
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const gridbutton = document.querySelector("#grid");
+            const listbutton = document.querySelector("#list");
+            const display = document.querySelector("#member-container");
+
+            gridbutton.addEventListener("click", () => {
+                // example using arrow function
+                display.classList.add("grid");
+                display.classList.remove("list");
+                displayMembers(membersData, true); // Display with images
+            });
+
+            listbutton.addEventListener("click", showList); // example using defined function
+
+            function showList() {
+                display.classList.remove("grid");
+                display.classList.add("list");
+                displayMembers(membersData, false); // Display without images
+            }
+
+            const memberContainer = document.getElementById('member-container');
+            let membersData = []; // Store the fetched members data
+
+            // Fetch member data from JSON file
+            fetch('members.json')
+                .then(response => response.json())
+                .then(data => {
+                    membersData = data.members; // Store the fetched data
+                    displayMembers(membersData, true); // Initial display in grid with images
+                })
+                .catch(error => console.error('Error fetching members:', error));
+
+            // Function to display members
+            function displayMembers(members, showImage) {
+                memberContainer.innerHTML = ''; // Clear existing content
+                members.forEach(member => {
+                    const card = document.createElement('section');
+
+                    let cardContent = `
+                        <h3>${member.name}</h3>
+                        <p>Address: ${member.address}</p>
+                        <p>Phone: ${member.phone}</p>
+                        <a href="${member.website}" target="_blank">Website</a>
+                        <p>Membership Level: ${member.membershipLevel}</p>
+                        <p>${member.otherInfo}</p>
+                    `;
+
+                    if (showImage) {
+                        cardContent = `<img src="${member.image}" alt="${member.name}">` + cardContent;
+                    }
+
+                    card.innerHTML = cardContent;
+                    memberContainer.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
