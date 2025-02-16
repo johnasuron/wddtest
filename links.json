@@ -26,7 +26,7 @@
         {
             "week": "Week 4",
             "links": [
-                { "url": "pseudo.html", "title": "Pseudo-classes" },
+                { "url": "pseudo-element.html", "title": "Pseudo-classes" },
                 { "url": "pictures/combinator exercises.jpg", "title": "Combinator Exercises" },
                 { "url": "table.html", "title": "Table Build" },
                 { "url": "course.html", "title": "Html Form" }
