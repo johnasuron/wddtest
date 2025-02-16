@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p>Current: ${currentTemperature}°C - ${currentDescription}</p>
                         <img src="${iconUrl}" alt="${currentDescription}" class="weather-icon">
                         <h3>3-Day Forecast:</h3>
-                        <ul>
-                            ${dailyForecasts.map(forecast => `<li>${forecast.day}: ${forecast.temp}°C</li>`).join('')}
-                        </ul>
+                        <div class="forecast-container">
+                            ${dailyForecasts.map(forecast => `<div>${forecast.day}: ${forecast.temp}°C</div>`).join('')}
+                        </div>
                     `;
                 });
         })
