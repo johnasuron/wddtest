@@ -32,7 +32,7 @@
             <h1><span class="course-title">Course Application</span></h1>
             <button id="darkModeToggle">🌙 Dark Mode</button>
         </div>
-        <button id="menuToggle" aria-label="Toggle Menu">&#9776;</button>
+        <button id="menuToggle" aria-label="Toggle Menu">☰</button>
         <nav id="navMenu">
             <ul>
                 <li><a href="../index.html">Home</a></li>
@@ -83,6 +83,14 @@
     </footer>
     <script src="scripts/getDates.js"></script>
     <script src="form.js"></script>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
