@@ -26,49 +26,35 @@
 
 <body>
   <header>
-    <div class="container">
+    <div class="header-content">
+      <img src="pictures/turkana.jpg" alt="Chamber Logo">
       <h1>Turkana Chamber of Commerce</h1>
-      <nav id="nav-menu">
-        <ul>
-          <li><a href="../index.html" class="active">Home</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="./directory.html">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </nav>
-      <button class="hamburger-menu" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
     </div>
+    <button id="menuToggle">☰</button>
+    <nav>
+      <ul>
+        <li><a href="../index.html" class="active">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="./directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Banner for Meet and Greet -->
-  <div id="meet-greet-banner" class="banner">
-    <p>Join us for the Chamber of Commerce Meet and Greet on Wednesday at 7:00 p.m.!</p>
-    <button id="close-banner" onclick="closeBanner()">❌</button>
-  </div>
-
-  <!-- Events Section -->
-  <section class="events">
-    <div class="container">
-      <h2>Upcoming Events in Turkana County</h2>
-      <ul>
-        <li><strong>Trade Fair:</strong> March 25, 2024 - Lodwar Town</li>
-        <li><strong>Cultural Festival:</strong> April 10, 2024 - Kalokol</li>
-        <li><strong>Agricultural Expo:</strong> May 5, 2024 - Kakuma</li>
-      </ul>
-    </div>
-  </section>
-
   <main>
+    <!-- Meet and Greet Banner -->
+    <div id="meet-greet-banner" class="banner">
+      <p>Join us for the Chamber of Commerce Meet and Greet on Wednesday at 7:00 p.m.!</p>
+      <button id="close-banner" onclick="closeBanner()">❌</button>
+    </div>
+
+    <!-- Hero Section -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
           <h2>Welcome to Turkana, Where Opportunity Blossoms</h2>
-          <p>
-            Explore the vibrant business landscape and rich culture of Turkana. We're dedicated to fostering
-            growth,
-            attracting investment, and promoting the unique advantages of our region.
+          <p>Explore the vibrant business landscape and rich culture of Turkana. We're dedicated to
+            fostering growth, attracting investment, and promoting the unique advantages of our region.
           </p>
           <a href="join.html" class="cta-button">Become a Member</a>
         </div>
@@ -78,36 +64,57 @@
       </div>
     </section>
 
-    <section class="community-info">
+    <!-- Community Information & Weather Section -->
+    <section class="community-and-weather">
       <div class="container">
-        <h2>Community Snapshot</h2>
-        <div class="info-grid">
-          <div class="info-box">
-            <i class="fas fa-map-marker-alt"></i>
-            <h3>Geographic Hub</h3>
-            <p>Turkana County sits in the heart of Northern Kenya, strategically located for trade and
-              tourism.</p>
-          </div>
-          <div class="info-box">
-            <i class="fas fa-user-friends"></i>
-            <h3>A Thriving Community</h3>
-            <p>A warm and welcoming place with a diverse population eager to collaborate.</p>
-          </div>
-          <div class="info-box">
-            <i class="fas fa-seedling"></i>
-            <h3>Emerging Markets</h3>
-            <p>Opportunities abound in agriculture, renewable energy, and tourism, ready for innovation.</p>
+        <div class="community-info">
+          <h2>Community Snapshot</h2>
+          <div class="info-grid">
+            <div class="info-box">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>Geographic Hub</h3>
+              <p>Turkana County sits in the heart of Northern Kenya, strategically located for trade
+                and tourism.</p>
+            </div>
+            <div class="info-box">
+              <i class="fas fa-user-friends"></i>
+              <h3>A Thriving Community</h3>
+              <p>A warm and welcoming place with a diverse population eager to collaborate.</p>
+            </div>
+            <div class="info-box">
+              <i class="fas fa-seedling"></i>
+              <h3>Emerging Markets</h3>
+              <p>Opportunities abound in agriculture, renewable energy, and tourism, ready for
+                innovation.</p>
+            </div>
           </div>
         </div>
+
         <div class="weather-widget">
           <h3>Weather in Lodwar</h3>
           <div id="weather-info">
             <p>Loading weather data...</p>
           </div>
+          <div id="weather-data">
+            <!-- Weather data will be inserted here -->
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Upcoming Events Section -->
+    <section class="events">
+      <div class="container">
+        <h2>Upcoming Events in Turkana County</h2>
+        <ul>
+          <li><strong>Trade Fair:</strong> March 25, 2024 - Lodwar Town</li>
+          <li><strong>Cultural Festival:</strong> April 10, 2024 - Kalokol</li>
+          <li><strong>Agricultural Expo:</strong> May 5, 2024 - Kakuma</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Business Spotlights Section -->
     <section class="business-spotlight">
       <div class="container">
         <h2>Business Spotlights</h2>
@@ -119,12 +126,10 @@
   </main>
 
   <footer>
-    <div class="container">
-      <p>© 2024 Turkana Chamber of Commerce. All rights reserved.</p>
-      <p><a href="https://app.moqups.com/cx5xnLBTTDmAVE4aCb7DHk7hH9Nn8MiK/view/page/ad64222d5"
-          target="_blank">Wireframe</a></p>
-      <p>John Lobuin Asuron | WDD230 Project | Last Modified: <span id="lastModified"></span></p>
-    </div>
+    <p>© 2024 Turkana Chamber of Commerce. All rights reserved.</p>
+    <p><a href="https://app.moqups.com/cx5xnLBTTDmAVE4aCb7DHk7hH9Nn8MiK/view/page/ad64222d5"
+        target="_blank">Wireframe</a></p>
+    <p>John Lobuin Asuron | WDD230 Project | Last Modified: <span id="lastModified"></span></p>
   </footer>
   <script src="joingetDates.js"></script>
   <script src="weather.js"></script>
@@ -137,79 +142,78 @@
 
     // JSON data for members
     const membersData = {
-      "members": [
-        {
-          "name": "Tech Solutions Inc.",
-          "address": "456 Innovation Drive, Anytown, USA",
-          "phone": "555-123-4567",
-          "website": "https://techsolutions.com",
-          "image": "pictures/techsolutions.jpg",
-          "membershipLevel": "Gold",
-          "otherInfo": "Leading provider of IT solutions for businesses."
-        },
-        {
-          "name": "Global Marketing Agency",
-          "address": "789 Marketing Blvd, Anytown, USA",
-          "phone": "555-987-6543",
-          "website": "https://globalmarketing.com",
-          "image": "pictures/marketing.jpg",
-          "membershipLevel": "Silver",
-          "otherInfo": "Specializing in international marketing strategies."
-        },
-        {
-          "name": "Coastal Coffee Roasters",
-          "address": "101 Seaside Avenue, Anytown, USA",
-          "phone": "555-222-3333",
-          "website": "https://coastalcoffee.com",
-          "image": "pictures/coffee.jpg",
-          "membershipLevel": "Bronze",
-          "otherInfo": "Locally roasted, ethically sourced coffee beans."
-        },
-        {
-          "name": "Precision Accounting Group",
-          "address": "222 Financial Plaza, Anytown, USA",
-          "phone": "555-444-5555",
-          "website": "https://precisionaccounting.com",
-          "image": "pictures/accounting.jpg",
-          "membershipLevel": "Gold",
-          "otherInfo": "Expert accounting and tax services for small businesses."
-        },
-        {
-          "name": "Visionary Design Studio",
-          "address": "333 Creative Lane, Anytown, USA",
-          "phone": "555-666-7777",
-          "website": "https://visionarydesign.com",
-          "image": "pictures/studio.jpg",
-          "membershipLevel": "Silver",
-          "otherInfo": "Creating stunning visuals and branding solutions."
-        },
-        {
-          "name": "Summit Construction Corp",
-          "address": "444 Builders Road, Anytown, USA",
-          "phone": "555-777-8888",
-          "website": "https://summitconstruction.com",
-          "image": "pictures/constructions.jpg",
-          "membershipLevel": "Bronze",
-          "otherInfo": "Building quality homes and commercial spaces."
-        },
-        {
-          "name": "Holistic Wellness Center",
-          "address": "555 Serenity Circle, Anytown, USA",
-          "phone": "555-888-9999",
-          "website": "https://holisticwellness.com",
-          "image": "pictures/wellness.jpg",
-          "membershipLevel": "Gold",
-          "otherInfo": "Providing holistic health and wellness services."
-        },
-        {
-          "name": "Bright Futures Tutoring",
-          "address": "666 Education Street, Anytown, USA",
-          "phone": "555-111-2222",
-          "website": "https://brightfuturestutoring.com",
-          "image": "pictures/tutor.jpg",
-          "membershipLevel": "Silver",
-          "otherInfo": "Dedicated to helping students achieve academic success."
-        }
+      "members": [{
+        "name": "Tech Solutions Inc.",
+        "address": "456 Innovation Drive, Anytown, USA",
+        "phone": "555-123-4567",
+        "website": "https://techsolutions.com",
+        "image": "pictures/techsolutions.jpg",
+        "membershipLevel": "Gold",
+        "otherInfo": "Leading provider of IT solutions for businesses."
+      },
+      {
+        "name": "Global Marketing Agency",
+        "address": "789 Marketing Blvd, Anytown, USA",
+        "phone": "555-987-6543",
+        "website": "https://globalmarketing.com",
+        "image": "pictures/marketing.jpg",
+        "membershipLevel": "Silver",
+        "otherInfo": "Specializing in international marketing strategies."
+      },
+      {
+        "name": "Coastal Coffee Roasters",
+        "address": "101 Seaside Avenue, Anytown, USA",
+        "phone": "555-222-3333",
+        "website": "https://coastalcoffee.com",
+        "image": "pictures/coffee.jpg",
+        "membershipLevel": "Bronze",
+        "otherInfo": "Locally roasted, ethically sourced coffee beans."
+      },
+      {
+        "name": "Precision Accounting Group",
+        "address": "222 Financial Plaza, Anytown, USA",
+        "phone": "555-444-5555",
+        "website": "https://precisionaccounting.com",
+        "image": "pictures/accounting.jpg",
+        "membershipLevel": "Gold",
+        "otherInfo": "Expert accounting and tax services for small businesses."
+      },
+      {
+        "name": "Visionary Design Studio",
+        "address": "333 Creative Lane, Anytown, USA",
+        "phone": "555-666-7777",
+        "website": "https://visionarydesign.com",
+        "image": "pictures/studio.jpg",
+        "membershipLevel": "Silver",
+        "otherInfo": "Creating stunning visuals and branding solutions."
+      },
+      {
+        "name": "Summit Construction Corp",
+        "address": "444 Builders Road, Anytown, USA",
+        "phone": "555-777-8888",
+        "website": "https://summitconstruction.com",
+        "image": "pictures/constructions.jpg",
+        "membershipLevel": "Bronze",
+        "otherInfo": "Building quality homes and commercial spaces."
+      },
+      {
+        "name": "Holistic Wellness Center",
+        "address": "555 Serenity Circle, Anytown, USA",
+        "phone": "555-888-9999",
+        "website": "https://holisticwellness.com",
+        "image": "pictures/wellness.jpg",
+        "membershipLevel": "Gold",
+        "otherInfo": "Providing holistic health and wellness services."
+      },
+      {
+        "name": "Bright Futures Tutoring",
+        "address": "666 Education Street, Anytown, USA",
+        "phone": "555-111-2222",
+        "website": "https://brightfuturestutoring.com",
+        "image": "pictures/tutor.jpg",
+        "membershipLevel": "Silver",
+        "otherInfo": "Dedicated to helping students achieve academic success."
+      }
       ]
     };
 
