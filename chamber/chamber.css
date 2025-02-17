@@ -112,7 +112,9 @@ nav a:hover {
 
     nav ul.active {
         display: flex;
+        /* or block, or grid, as appropriate */
     }
+
 
     nav a {
         padding: 10px 15px;
