@@ -50,7 +50,7 @@
             "address": "444 Builders Road, Anytown, USA",
             "phone": "555-777-8888",
             "website": "https://summitconstruction.example.com",
-            "image": "pictures/constructions.jpg",
+            "image": "pictures/constructions.webp",
             "membershipLevel": "Bronze",
             "otherInfo": "Building quality homes and commercial spaces."
         },
