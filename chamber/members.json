@@ -32,7 +32,7 @@
             "address": "222 Financial Plaza, Anytown, USA",
             "phone": "555-444-5555",
             "website": "https://precisionaccounting.example.com",
-            "image": "pictures/accounting.jpg",
+            "image": "pictures/accounting.webp",
             "membershipLevel": "Gold",
             "otherInfo": "Expert accounting and tax services for small businesses."
         },
@@ -41,7 +41,7 @@
             "address": "333 Creative Lane, Anytown, USA",
             "phone": "555-666-7777",
             "website": "https://visionarydesign.example.com",
-            "image": "pictures/studio.jpg",
+            "image": "pictures/studio.webp",
             "membershipLevel": "Silver",
             "otherInfo": "Creating stunning visuals and branding solutions."
         },
@@ -59,7 +59,7 @@
             "address": "555 Serenity Circle, Anytown, USA",
             "phone": "555-888-9999",
             "website": "https://holisticwellness.example.com",
-            "image": "pictures/wellness.jpg",
+            "image": "pictures/wellness.webp",
             "membershipLevel": "Gold",
             "otherInfo": "Providing holistic health and wellness services."
         },
@@ -68,7 +68,7 @@
             "address": "666 Education Street, Anytown, USA",
             "phone": "555-111-2222",
             "website": "https://brightfuturestutoring.example.com",
-            "image": "pictures/tutor.jpg",
+            "image": "pictures/tutor.webp",
             "membershipLevel": "Silver",
             "otherInfo": "Dedicated to helping students achieve academic success."
         }
