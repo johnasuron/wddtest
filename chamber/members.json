@@ -23,7 +23,7 @@
             "address": "101 Seaside Avenue, Anytown, USA",
             "phone": "555-222-3333",
             "website": "https://coastalcoffee.example.com",
-            "image": "pictures/coffee.jpg",
+            "image": "pictures/coffee.webp",
             "membershipLevel": "Bronze",
             "otherInfo": "Locally roasted, ethically sourced coffee beans."
         },
